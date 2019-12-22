@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <typeAliases><package name="com.pojo"/></typeAliases>
+
+<environments default="mysql">
+    <environment id="mysql">
+        <transactionManager type="JDBC"/>
+        <!--    连接池类型    -->
+        <dataSource type="POOLED">
+            <property name="username" value="${jdbcproperties.username}"/>
+            <property name="password" value="${jdbcproperties.password}"/>
+            <property name="url" value="${jdbcproperties.url}"/>
+            <property name="driver" value="${jdbcproperties.driver}"/>
+        </dataSource>
+    </environment>
+</environments>
+<!--    <mappers>-->
+<!--        <mapper  resource="com/dao/UserDao.xml" />-->
+<!--    </mappers>在resources idea路径下写xml-->
+    <mappers><package name="com.dao"/></mappers>
+</configuration>
